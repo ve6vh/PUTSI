@@ -1,5 +1,5 @@
 PUTSI is an acronym for PIC USB Telecommunications System Interface, a telemetry gathering device for up to 8
-analog inputs, 6 digital inputs and 5 digital outputs.
+analog inputs, 5 digital inputs and 5 digital outputs.
 
 It interfaces directly with Allstar, to replace the previous Chameleon device, and is 100% compatible. Alarms
 and telemetry can be set up using the methods in Allstar.
