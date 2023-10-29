@@ -1,0 +1,11 @@
+This directory contains a modified version of app_rpt that has some additional debug printf's
+added for PUTSI debugging. It has been compiled and run on the V2.0.0 Beta 6 base code, it has
+not been tested on the older version.
+Install tbe Beta 6 source code from the link on the AllstarLink Wiki, and then copy this 
+directory to your target system. type 'make' to build it.
+The library of executable modules lives in /usr/lib/asterisk/modules.
+Copy the old version to a backup name, ie app_rpt.so.bak, then copy the new one to 
+the same directory. 
+restart asterisk to continue:
+  service asterisk restart
+
