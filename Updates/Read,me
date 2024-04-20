@@ -1,5 +1,8 @@
 Firmware update from v1.0 to 1.1
 A bug was found in the pin status processing routine that did not update the monitor status correctly. Pin 9 had a default setting so it always worked.
-A second bug was found in the integer to ascii routine, which was dropping a trailing zero. This could have created incorrect voltage readings when values ended in zero.
+A second bug was found in the integer to ascii routine, which was dropping a trailing zero. This could have created incorrect voltage readings when values ended in zero, and it also
+appears that this bug occurs with number that have a zero in the middle, like 201, 202, etc. So a fix is still pending.
 
-This update is mandatory.
+This update will be required once I fix it!!
+
+Stay tuned.
