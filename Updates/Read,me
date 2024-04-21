@@ -3,6 +3,6 @@ A bug was found in the pin status processing routine that did not update the mon
 A second bug was found in the integer to ascii routine, which was dropping a trailing zero. This could have created incorrect voltage readings when values ended in zero, and it also
 appears that this bug occurs with number that have a zero in the middle, like 201, 202, etc. So a fix is still pending.
 
-This update will be required once I fix it!!
+This bug has finally been fixed..now onto the remote reset again!!
 
-Stay tuned.
+Hex file is in this directory.
