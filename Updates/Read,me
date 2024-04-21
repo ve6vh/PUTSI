@@ -5,4 +5,6 @@ appears that this bug occurs with number that have a zero in the middle, like 20
 
 This bug has finally been fixed..now onto the remote reset again!!
 
-Hex file is in this directory.
+I have also uploaded a version called 'no poll timeout'. This reinstates the remote reset feature. Once the connection with asterisk is started, the no poll timer is enabled and set to 30 seconds.
+If no poll is received in that time, the board will reset enabling you to restart asterisk. Polls should occur once every 10 seconds, on each poll the timer is restarted.
+
