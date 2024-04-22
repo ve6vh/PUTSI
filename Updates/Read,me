@@ -1,10 +1,21 @@
-Firmware update from v1.0 to 1.1
-A bug was found in the pin status processing routine that did not update the monitor status correctly. Pin 9 had a default setting so it always worked.
-A second bug was found in the integer to ascii routine, which was dropping a trailing zero. This could have created incorrect voltage readings when values ended in zero, and it also
-appears that this bug occurs with number that have a zero in the middle, like 201, 202, etc. So a fix is still pending.
+Firmware update to V1.2
+The following are from the release notes in the Rev 1.2 documenation:
 
-This bug has finally been fixed..now onto the remote reset again!!
+1.	Bugs Fixed
+A bug still remained in the ascii conversion routine. Trailing zeros were correct, but number such as 203 would be emitted as 23. This was re-written.
 
-I have also uploaded a version called 'no poll timeout'. This reinstates the remote reset feature. Once the connection with asterisk is started, the no poll timer is enabled and set to 30 seconds.
-If no poll is received in that time, the board will reset enabling you to restart asterisk. Polls should occur once every 10 seconds, on each poll the timer is restarted.
+2.	Changes to Alarm monitoring
+The default alarm status for pin 9 was removed, to enable Allstar to configure the monitor mode. It appears that in older versions of asterisk this command is not implemented, so all the inputs are 
+initialized in monitor mode. For versions after V1.4.23, the correct status will be updated.
 
+3.	USB mode LED activation
+In previous versions the USB mode was activated by a command from Allstar to turn the LED on. This has been revised to turn it on when the first poll command is received. It is n ow consistent with the WiFi m
+ode that is activated after a connection has been made.
+
+4.	No Poll timeout
+A 30 second no poll timeout has been added. Allstar should poll once every 10 seconds if no poll has been received in that time the device resets.
+
+5.	Startup Mode
+In previous versions the device would enter the configuration mode if the EEPROM configuration was not valid, determined by the presence of certain specific values. Instead, 
+if that is the case,  it now copies the default configuration (see Figure 7 in the documentation) for the USB mode only as a default. Enabling the WiFi mode now requires 
+the insertion of the jumper to enter the configuration state.
